@@ -13,13 +13,11 @@ const Navbar = () => {
                 <AiOutlineMenu size={30}/>
             </div>
             <h1 className='text-orange-500 font-bold text-2xl lg:text-4xl sm:text-3xl px-2 lg:ml-10 '>Kuku Jamboo </h1>
-              <div className='flex rounded-full ' >
-                  <div className='rounded-full h-full w-20 hidden lg:flex'>
-                      <img className=' rounded-full' size={20} src='https://t4.ftcdn.net/jpg/06/35/42/23/240_F_635422353_itHNBmILkvoY339f8vcxfF6WYb6uI90O.jpg' alt='chicken' />
-                  </div>
-                  </div>
-                  <div className='flex items-center px-2 bg-gray-200 rounded-full  w-[200px] sm:w-[400px] lg:w-[500px] '>
-                    <AiOutlineSearch className='mr-2' size={20}/>
+              <div className='rounded-full h-full w-10 hidden lg:flex '>
+                  <img className=' rounded-full' src='https://t4.ftcdn.net/jpg/06/35/42/23/240_F_635422353_itHNBmILkvoY339f8vcxfF6WYb6uI90O.jpg' alt='chicken' />
+              </div>
+                  <div className='flex items-center px-2 bg-gray-200 rounded-full  w-[200px] sm:w-[400px] lg:w-[500px] lg:ml-12 '>
+                    <AiOutlineSearch className='mr-2 ' size={20}/>
                     <input className='bg-transparent  focus:outline-none w-full p-2' type='text' placeholder='Enter Your Food'/>
                   </div>
                   <button className='hidden md:flex items-center p-4 border-orange-600 py-2 text-orange-500 rounded-full lg:ml-10 cursor-pointer hover:bg-orange-500 hover:text-white'>
@@ -27,7 +25,7 @@ const Navbar = () => {
                     <h1>Cart</h1>
                   </button>
         </div>
-          <div className={nav ? 'bg-white fixed top-0 left-0 w-[300px] h-screen z-10 duration-300' : 'bg-white fixed top-0 left-[-100%] w-[300px] h-screen z-10 duration-300'}>
+          <div className={nav ? 'bg-white fixed top-0 left-0 w-[250px] h-screen z-10 duration-300' : 'bg-white fixed top-0 left-[-100%] w-[250px] h-screen z-10 duration-300'}>
               <AiOutlineClose
                   onClick={() => setNav(!nav)}
                   className='absolute right-4 top-4 cursor-pointer' size={30} />
