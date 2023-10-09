@@ -1,5 +1,6 @@
 import Drinks from "./component/drinks";
 import Hero from "./component/hero";
+import Menu from "./component/menu";
 import Navbar from "./component/navbar";
 
 
@@ -9,6 +10,7 @@ function App() {
       <Navbar/>
       <Hero/>
       <Drinks/>
+      <Menu/>
     </div>
   );
 }
