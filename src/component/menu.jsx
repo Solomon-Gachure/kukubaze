@@ -35,10 +35,10 @@ const Menu = () => {
                     <div>
                         <p className='text-xl'>Filter Prices:</p>
                         <div>
-                            <button onClick={()=> filterPrice("$")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>$</button>
-                            <button onClick={()=> filterPrice("$$")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>$$</button>
-                            <button onClick={()=> filterPrice("$$$")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>$$$</button>
-                            <button onClick={()=> filterPrice("$$$$")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>$$$$</button>
+                            <button onClick={() => filterPrice("Ksh.500")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Ksh.500</button>
+                            <button onClick={() => filterPrice("Ksh.1000")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Ksh.1000</button>
+                            <button onClick={() => filterPrice("Ksh.1500")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Ksh.1500</button>
+                            <button onClick={() => filterPrice("Ksh.2000")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Ksh.2000</button>
 
                         </div>
                     </div>
