@@ -1,13 +1,11 @@
 import React, {useState} from 'react'
 import { AiOutlineMenu, AiOutlineSearch, AiFillTag, AiOutlineClose } from "react-icons/ai"
 import { BsFillCartFill } from 'react-icons/bs'
-import { FaUserFriends, FaWallet } from 'react-icons/fa'
-import { TbTruckDelivery } from "react-icons/tb"
-import { MdFavorite, MdHelp } from 'react-icons/md'
+import { Link } from 'react-scroll';
 const Navbar = () => {
     const [nav,setNav]=useState(false)
   return (
-    <div className='max-w-[1640px] flex items-center justify-between mx-auto p-4 '>
+    <div className='font-mono max-w-[1640px] flex items-center justify-between mx-auto p-4 '>
         <div className='flex items-center'>
             <div className='cursor-pointer' onClick={()=>setNav(!nav)}>
                 <AiOutlineMenu size={30}/>
@@ -31,13 +29,19 @@ const Navbar = () => {
                   className='absolute right-4 top-4 cursor-pointer' size={30} />
               <h1 className='text-2xl p-4 font-bold text-orange-500'>Kuku Jamboo</h1>
               <nav>
-                  <ul className='flex flex-col p-4 text-gray-800'>
-                      <li className='text-xl py-4 flex'><TbTruckDelivery className='mr-2' size={25} />Delivery</li>
-                      <li className='text-xl py-4 flex'><MdFavorite className='mr-2' size={25} />Favorites</li>
-                      <li className='text-xl py-4 flex'><FaWallet className='mr-2' size={25} />Wallet</li>
-                      <li className='text-xl py-4 flex'><MdHelp className='mr-2' size={25} />Help</li>
-                      <li className='text-xl py-4 flex'><AiFillTag className='mr-2' size={25} />Promos</li>
-                      <li className='text-xl py-4 flex'><FaUserFriends className='mr-2' size={25} />Location</li>
+                  <ul className='flex flex-col pt-10 p-4 gap-8 text-2xl md:text-4xl text-orange-500'>
+                     <Link activeClass="active" to="home"  smooth={true} offset={50} duration={500} >
+                        <li className='hover:text-cyan-700 z-40 cursor-pointer font-semibold'>Home</li>
+                    </Link>
+                    <Link activeClass="active" to="drinks"  smooth={true} offset={50} duration={500} >
+                        <li className='hover:text-cyan-700 z-40 cursor-pointer font-semibold'>Drinks</li>
+                    </Link>
+                    <Link activeClass="active" to="menu"  smooth={true} offset={50} duration={500} >
+                        <li className='hover:text-cyan-700 z-40 cursor-pointer font-semibold'>Menu</li>
+                    </Link>
+                    <Link activeClass="active" to="contact"  smooth={true} offset={50} duration={500} >
+                        <li className='hover:text-cyan-700 z-40 cursor-pointer font-semibold'>Contact</li>
+                    </Link>
 
                   </ul>
               </nav>

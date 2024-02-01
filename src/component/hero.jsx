@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <div className='max-h-[1640px] mx-auto p-4'>
+    <div name='home' className='max-h-[1640px] font-mono mx-auto p-4'>
         <div className='relative max-h-[500px]'>
               <div className='absolute max-h-[500px] flex flex-col justify-center text-gray-200 bg-black/40 w-full h-full'>
                   <h1 className='px-4 font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>BEST <span className='text-orange-500'>CHICKEN</span></h1>

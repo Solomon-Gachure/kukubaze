@@ -2,7 +2,7 @@ import React from 'react'
 
 const Drinks = () => {
   return (
-    <div className='max-w-[1640px] mx-auto p-4'>
+    <div name='drinks' className='max-w-[1640px] font-mono mx-auto p-4'>
           <h1 className='text-2xl lg:text-3xl font-bold text-orange-500 flex justify-center'>Quench Your Thirst : </h1>
         <div className='grid grid-cols-2 lg:grid-cols-3 pt-2 gap-6 p-2  '>
             
