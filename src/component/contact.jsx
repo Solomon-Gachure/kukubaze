@@ -8,8 +8,8 @@ const Contact = () => {
         </div>
        <div className='max-w-[500px] mx-auto p-2' >
               <form className='flex flex-col justify-center gap-3' action="https://getform.io/f/db96c5fb-9063-4883-a850-e833759e93be" method="post">
-                  <input required className='bg-gray-100 p-2 rounded-lg outline-gray-100' name='name' type="text" placeholder='Enter Your Name' />
-                  <input required className='bg-gray-100 p-2 rounded-lg outline-gray-100' name='email' type="text" placeholder='Enter Your Email' />
+                  <input required className='bg-gray-100 p-3 rounded-lg outline-gray-100' name='name' type="text" placeholder='Enter Your Name' />
+                  <input required className='bg-gray-100 p-3 rounded-lg outline-gray-100' name='email' type="text" placeholder='Enter Your Email' />
                   <textarea required className='bg-gray-100 p-2 rounded-lg outline-gray-100' name="message" id="" cols="30" rows="5" placeholder='Enter Your Message'></textarea>
                   <div className='max-w-[500px] flex justify-center'>
                       <button className='text-white bg-green-500 hover:scale-105 duration-300 border-green-500 font-bold'>SUBMIT</button>
