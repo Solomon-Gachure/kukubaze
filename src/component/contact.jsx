@@ -12,7 +12,7 @@ const Contact = () => {
                   <input required className='bg-gray-100 p-3 outline-none   rounded-lg outline-gray-100' name='email' type="text" placeholder='Enter Your Email' />
                   <textarea required className='bg-gray-100 p-2 rounded-lg outline-gray-100' name="message" id="" cols="30" rows="5" placeholder='Enter Your Message'></textarea>
                   <div className='max-w-[500px] flex justify-center'>
-                      <button className='text-white bg-green-500 hover:scale-105 duration-300 border-green-500 font-bold'>SUBMIT</button>
+                      <button className='text-white bg-green-500 hover:scale-105 duration-300 p-2 border-green-500 font-bold'>SUBMIT</button>
                   </div>
 
               </form>
