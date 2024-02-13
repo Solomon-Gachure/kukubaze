@@ -23,11 +23,11 @@ const Menu = () => {
                 <div>
                     <p className='text-xl'>Filter Type:</p>
                     <div className='flex justify-between flex-wrap'>
-                        <button onClick={()=>setFoods(data)} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>All</button>
-                        <button onClick={()=>filterType('chicken')} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Chicken</button>
-                        <button onClick={()=>filterType("burger")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Burgers</button>
-                        <button onClick={()=>filterType("salad")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Salad</button>
-                        <button onClick={()=>filterType("pizza")} className='m-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Pizza</button>
+                        <button onClick={()=>setFoods(data)} className='m-1 p-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>All</button>
+                        <button onClick={()=>filterType('chicken')} className='m-1 p-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Chicken</button>
+                        <button onClick={()=>filterType("burger")} className='m-1 p-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Burgers</button>
+                        <button onClick={()=>filterType("salad")} className='m-1 p-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Salad</button>
+                        <button onClick={()=>filterType("pizza")} className='m-1 p-1 text-orange-500 border-orange-500 font-bold hover:text-white hover:bg-orange-500'>Pizza</button>
 
                     </div>
                 </div>
