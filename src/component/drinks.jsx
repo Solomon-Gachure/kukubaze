@@ -1,8 +1,39 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 const Drinks = () => {
+  const[drinks, setDrinks]=useState([]);
+  useEffect(()=>{
+    const fetchData =async()=>{
+      try{
+        const response=await axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a');
+        setDrinks(response.data.drinks);
+      }
+      catch (error){
+console.error('Error fetching data', error)
+      }
+    }
+    fetchData();
+  },[]);
   return (
     <div name='drinks' className='max-w-[1640px] font-mono mx-auto p-4'>
-      
+     <div>
+      <h1>Drinks</h1>
+      <div>
+        {drinks.map((drink) => (
+          <div key={drink.idDrink}>
+            <h2>{drink.strDrink}</h2>
+            <p>{drink.strCategory}</p>
+            <p>{drink.strIngredient1}</p>
+            <p>{drink.strIngredient2}</p>
+            <p>{drink.strIngredient3}</p>
+            <p>{drink.strIngredient4}</p>
+            <p>{drink.strIngredient5}</p>
+            <p>{drink.strIngredient6}</p>
+            <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+          </div>
+        ))}
+      </div>
+    </div>
           <h1 className='text-2xl lg:text-3xl font-bold text-orange-500 flex justify-center'>Quench Your Thirst : </h1>
         <div className='grid grid-cols-2 lg:grid-cols-3 pt-2 gap-6 p-2  '>
             
