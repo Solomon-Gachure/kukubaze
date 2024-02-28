@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { AiOutlineMenu, AiOutlineSearch, AiFillTag, AiOutlineClose } from "react-icons/ai"
+import { AiOutlineMenu, AiOutlineSearch, AiOutlineClose } from "react-icons/ai"
 import { BsFillCartFill } from 'react-icons/bs'
 import { Link } from 'react-scroll';
 const Navbar = () => {
