@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { LiaCocktailSolid } from "react-icons/lia";
 import axios from 'axios';
 const Drinks = () => {
   const[drinks, setDrinks]=useState([]);
@@ -15,71 +16,39 @@ console.error('Error fetching data', error)
     fetchData();
   },[]);
   return (
-    <div name='drinks' className='max-w-[1640px] font-mono mx-auto p-4'>
-     <div>
-      <h1>Drinks</h1>
-      <div>
+    <div name='drinks' className='font-mono w-full mx-auto p-2 border bg-orange-600/30'>
+          <h1 className='text-2xl lg:text-3xl font-bold text-orange-500 flex justify-center'>Quench Your Thirst : </h1>
+          <div className='grid md:grid-cols-2 gap-4 text-md pt-4 w-full' >
         {drinks.map((drink) => (
-          <div key={drink.idDrink}>
-            <h2>{drink.strDrink}</h2>
-            <p>{drink.strCategory}</p>
-            <p>{drink.strIngredient1}</p>
-            <p>{drink.strIngredient2}</p>
-            <p>{drink.strIngredient3}</p>
-            <p>{drink.strIngredient4}</p>
-            <p>{drink.strIngredient5}</p>
-            <p>{drink.strIngredient6}</p>
-            <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+          <div key={drink.idDrink} className='grid grid-cols-2 gap-2 md:gap-8 lg:max-w-[700px] border bg-white rounded-lg'>
+            <div className='lg:w-[300px] lg:h-[400px] rounded-l-lg'>
+              <img className='object-cover w-full h-full rounded-l-lg' src={drink.strDrinkThumb} alt={drink.strDrink} />
+            </div>
+            <div className='flex flex-col justify-between  bg-white rounded-lg'>
+              <div className='gap-1 flex flex-col pt-4'>
+                <div><h2 className='font-bold text-xl italic text-orange-500'>{drink.strDrink}</h2></div>
+            <div><p>{drink.strCategory}</p></div>
+            <div>
+              <p>Ingredients:</p>
+            <ol className="ml-4">
+              <li>{drink.strIngredient1}</li>
+              <li>{drink.strIngredient2}</li>
+              <li>{drink.strIngredient3}</li>
+              <li>{drink.strIngredient4}</li>
+              <li>{drink.strIngredient5}</li>
+              <li>{drink.strIngredient6}</li>
+            </ol>
+            </div>
+            <div><p><span className='flex flex-row lg:items-center lg:gap-2'>How we craft it<LiaCocktailSolid className='text-orange-500' size={20} /> :</span>{drink.strInstructions}</p></div>
+              </div>
+            <div className='text-right m-2'>
+              <button className='border-none bg-orange-500/60 text-white font-bold italic'>add drink</button>
+            </div>
+            </div>
           </div>
         ))}
       </div>
-    </div>
-          <h1 className='text-2xl lg:text-3xl font-bold text-orange-500 flex justify-center'>Quench Your Thirst : </h1>
-        <div className='grid grid-cols-2 lg:grid-cols-3 pt-2 gap-6 p-2  '>
-            
-              <div className='relative rounded-xl shadow-lg hover:scale-105 duration-300'>
-                  <div className='absolute bg-black/20 h-full w-full rounded-xl flex flex-col justify-center'>
-                    <p  className=' font-bold px-2 text-2xl md:text-3xl  '>Get Your </p>
-                    <p className='px-2 font-bold text-3xl md:text-4xl'><span className='text-orange-500'>COLD</span> <span className='text-white'>COKE</span></p>
-                </div>
-                  <img className='max-h-[160px] md:max-h-[400px] w-full h-full object-cover rounded-xl' src="https://images.unsplash.com/photo-1648569883125-d01072540b4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODh8fGNvY2ElMjBjb2xhJTIwc29kYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="coke soda" /> 
-            </div>
-            <div className='relative rounded-xl shadow-lg hover:scale-105 duration-300'>
-                  <div className='absolute bg-black/20 h-full w-full rounded-xl flex flex-col justify-center'>
-                      <p className=' font-bold px-2 text-2xl md:text-3xl '>Get Your</p>
-                      <p className='px-2 font-bold text-3xl md:text-4xl'><span className='text-orange-500'>COLD</span> <span className='text-white'>FANTA</span></p>
-                  </div>
-                  <img className='max-h-[160px] md:max-h-[400px] w-full h-full object-cover rounded-xl' src="https://thumb.approvedfood.co.uk/thumbs/75/1000/1000/1/src_images/fanta_orange_glass_bottle_330ml.jpg" alt="fanta soda"/>
-            </div>
-            <div className='relative rounded-xl shadow-lg hover:scale-105 duration-300'>
-                  <div className='absolute bg-black/20 h-full w-full rounded-xl flex flex-col justify-center'>
-                      <p className=' font-bold px-2 text-2xl md:text-3xl '>Get Your </p>
-                      <p className='px-2 font-bold text-3xl md:text-4xl'><span className='text-orange-500'>COLD</span> <span className='text-white'>SPRITE</span></p>
-                  </div>
-                  <img className='max-h-[160px] md:max-h-[400px] w-full h-full object-cover rounded-xl' src="https://th.bing.com/th/id/OIP.HGpk3MDuKtHU8YQeeD2U1QHaHa?pid=ImgDet&rs=1" alt="sprite soda" />
-            </div>
-            <div className='relative rounded-xl shadow-lg hover:scale-105 duration-300'>
-                  <div className='absolute bg-black/20 h-full w-full rounded-xl flex flex-col justify-center'>
-                      <p className=' font-bold px-2 text-2xl md:text-3xl '>Get Your </p>
-                      <p className='px-2 font-bold text-3xl md:text-4xl'><span className='text-orange-500'>COLD</span> <span className='text-white'>SMOOTHIE</span></p>
-                  </div>
-                  <img className='max-h-[160px] md:max-h-[400px] w-full object-cover rounded-xl' src="https://images.unsplash.com/photo-1595981266586-1541a5a4307f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHNtb290aGllcyUyMHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="smoothy"  />
-            </div>
-            <div className='relative rounded-xl shadow-lg hover:scale-105 duration-300'>
-                  <div className='absolute bg-black/20 h-full w-full rounded-xl flex flex-col justify-center'>
-                      <p className=' font-bold px-2 text-2xl md:text-3xl '>Get Your </p>
-                      <p className='px-2 font-bold text-3xl md:text-4xl'><span className='text-orange-500'>COLD</span> <span className='text-white '>BERRY</span></p>
-                  </div>
-                  <img className='max-h-[160px] md:max-h-[400px] w-full object-cover rounded-xl' src="https://th.bing.com/th/id/OIP.Db0Li0nHAh5tdAiORxQO2wHaLH?pid=ImgDet&rs=1" alt="strawberry smoothy"  />
-            </div>
-              <div className='relative rounded-xl shadow-lg hover:scale-105 duration-300 '>
-                  <div className='absolute bg-black/20 h-full w-full rounded-xl flex flex-col justify-center'>
-                      <p  className=' font-bold px-2 text-2xl md:text-3xl '>Get Your </p>
-                      <p className='px-2 font-bold text-3xl md:text-4xl'><span className='text-orange-500'>COLD</span> <span className='text-white'>GREEN</span></p>
-                  </div>
-                  <img className='max-h-[160px] md:max-h-[400px] w-full h-full object-cover rounded-xl' src="https://i.pinimg.com/736x/ff/79/08/ff790891bfcab080b08bd9b6dec784b1.jpg" alt="greens smoothy"  />
-            </div>
-        </div>
+        
     </div>
   )
 }
