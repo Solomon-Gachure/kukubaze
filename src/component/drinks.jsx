@@ -48,7 +48,6 @@ console.error('Error fetching data', error)
               <li>{drink.strIngredient6}</li>
             </ol>
             </div>
-            <div></div>
              <div>
               <button onClick={() => handleOpen(drink.idDrink)} className='p-1'><span className='flex flex-row lg:items-center lg:gap-1'>How we craft it<LiaCocktailSolid className='text-orange-500' size={20} /></span></button>
              </div>
