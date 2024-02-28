@@ -17,7 +17,7 @@ const Menu = () => {
         );
     });
     return (
-        <div name='menu' className='max-w-[1640px] font-mono m-auto py-2 px-4'>
+        <div name='menu' className=' font-mono m-auto py-2 px-4'>
             <h1 className='text-2xl md:text-4xl text-orange-500 font-bold flex justify-center'>Our Top Rated Menu</h1>
             <div className='flex flex-col lg:flex-row justify-between'>
                 <div>

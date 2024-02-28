@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 const Navbar = () => {
     const [nav,setNav]=useState(false)
   return (
-    <div className='font-mono max-w-[1640px] flex items-center justify-between mx-auto p-4 '>
+    <div className='font-mono  flex items-center justify-between mx-auto p-4 '>
         <div className='flex items-center'>
             <div className='cursor-pointer' onClick={()=>setNav(!nav)}>
                 <AiOutlineMenu size={30}/>
@@ -29,7 +29,7 @@ const Navbar = () => {
                   className='absolute right-4 top-4 cursor-pointer' size={30} />
               <h1 className='text-2xl p-4 font-bold text-orange-500'>Kuku Jamboo</h1>
               <nav>
-                  <ul className='flex flex-col pt-10 p-4 gap-8 text-2xl md:text-4xl text-orange-500'>
+                  <ul className='flex flex-col pt-10 p-4 gap-8 text-2xl md:text-2xl text-orange-500'>
                      <Link activeClass="active" to="home"  smooth={true} offset={50} duration={500} >
                         <li className='hover:text-cyan-700 z-40 cursor-pointer font-semibold'>Home</li>
                     </Link>

@@ -2,6 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { LiaCocktailSolid } from "react-icons/lia";
 import axios from 'axios';
 const Drinks = () => {
+  const [selectedDrinkId, setSelectedDrinkId] = useState(null);
+  const [drink, setDrink] = useState([]);
+
+  const handleOpen = (idDrink) => {
+    setSelectedDrinkId(idDrink);
+  };
+  const handleClose=()=>{
+    setSelectedDrinkId(false)
+  }
   const[drinks, setDrinks]=useState([]);
   useEffect(()=>{
     const fetchData =async()=>{
@@ -16,15 +25,15 @@ console.error('Error fetching data', error)
     fetchData();
   },[]);
   return (
-    <div name='drinks' className='font-mono w-full mx-auto p-2 border bg-orange-600/30'>
+    <div name='drinks' className='font-mono  mx-auto p-2 border bg-orange-600/30'>
           <h1 className='text-2xl lg:text-3xl font-bold text-orange-500 flex justify-center'>Quench Your Thirst : </h1>
           <div className='grid md:grid-cols-2 gap-4 text-md pt-4 w-full' >
         {drinks.map((drink) => (
-          <div key={drink.idDrink} className='grid grid-cols-2 gap-2 md:gap-8 lg:max-w-[700px] border bg-white rounded-lg'>
-            <div className='lg:w-[300px] lg:h-[400px] rounded-l-lg'>
+          <div key={drink.idDrink} className='grid grid-cols-2 gap-2 md:gap-4 border bg-white/60 rounded-lg'>
+            <div className='rounded-l-lg'>
               <img className='object-cover w-full h-full rounded-l-lg' src={drink.strDrinkThumb} alt={drink.strDrink} />
             </div>
-            <div className='flex flex-col justify-between  bg-white rounded-lg'>
+            <div className='flex flex-col justify-between rounded-lg'>
               <div className='gap-1 flex flex-col pt-4'>
                 <div><h2 className='font-bold text-xl italic text-orange-500'>{drink.strDrink}</h2></div>
             <div><p>{drink.strCategory}</p></div>
@@ -39,8 +48,20 @@ console.error('Error fetching data', error)
               <li>{drink.strIngredient6}</li>
             </ol>
             </div>
-            <div><p><span className='flex flex-row lg:items-center lg:gap-2'>How we craft it<LiaCocktailSolid className='text-orange-500' size={20} /> :</span>{drink.strInstructions}</p></div>
+            <div></div>
+             <div>
+              <button onClick={() => handleOpen(drink.idDrink)} className='p-1'><span className='flex flex-row lg:items-center lg:gap-1'>How we craft it<LiaCocktailSolid className='text-orange-500' size={20} /></span></button>
+             </div>
+             {selectedDrinkId === drink.idDrink &&(
+          <div className='top-0 right-0 inset-0 w-full h-full'>
+<div className='flex flex-col justify-center items-center top-0 gap-2 w-full h-full text-orange-500 font-bold'>
+  <p>{drink.strInstructions}</p>
+<button onClick={handleClose} className='border-none'>close</button>
+</div>
+          </div>
+        )}
               </div>
+              
             <div className='text-right m-2'>
               <button className='border-none bg-orange-500/60 text-white font-bold italic'>add drink</button>
             </div>
