@@ -25,7 +25,7 @@ console.error('Error fetching data', error)
     fetchData();
   },[]);
   return (
-    <div name='drinks' className='font-mono  mx-auto p-2 border bg-orange-600/30'>
+    <div name='drinks' className='font-mono p-2 border bg-orange-600/30'>
           <h1 className='text-2xl lg:text-3xl font-bold text-orange-500 flex justify-center'>Quench Your Thirst : </h1>
           <div className='grid md:grid-cols-2 gap-4 text-md pt-4 w-full mb-3' >
         {drinks.map((drink) => (
