@@ -33,7 +33,7 @@ const Contact = () => {
 </div>
                 <form className='flex flex-col justify-center gap-3'  action="https://getform.io/f/db96c5fb-9063-4883-a850-e833759e93be" method="POST">
                   <input required className=' p-3 outline-none text-orange-500  rounded-lg outline-gray-100 ' name='name'  type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder='Enter Your Name' />
-                  <input required className='p-3 outline-none  text-black  rounded-lg outline-gray-100' name='email' value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder='Enter Your Email' />
+                  <input required className='p-3 outline-none  text-black  rounded-lg outline-gray-150' name='email' value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder='Enter Your Email' />
                   <textarea required className='p-2 outline-none rounded-lg text-black outline-gray-100' name="message" value={message} onChange={(e) => setMessage(e.target.value)} id="" cols="30" rows="5" placeholder='Enter Your Message'></textarea>
                   <div className='max-w-[500px] flex justify-center'>
                       <button
