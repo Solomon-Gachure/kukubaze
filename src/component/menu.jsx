@@ -17,7 +17,7 @@ const Menu = () => {
         );
     });
     return (
-        <div name='menu' className=' font-mono m-auto py-2 px-4'>
+        <div name='menu' className=' font-mono m-auto bg-stone-900 text-white py-2 px-4'>
             <h1 className='text-2xl md:text-4xl text-orange-500 font-bold flex justify-center'>Our Top Rated Menu</h1>
             <div className='flex flex-col lg:flex-row justify-between'>
                 <div>
@@ -47,7 +47,7 @@ const Menu = () => {
             </div>
             <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
                 {foods.map((items, index) => (
-                    <div key={index} className='border shadow-lg hover:scale-105 duration-300 rounded-lg'>
+                    <div key={index} className='border border-white/30 shadow-lg hover:scale-105 duration-300 rounded-lg'>
                         <img src={items.image} alt={items.name} className='w-full h-[200px] object-cover rounded-t-lg' />
                         <div className='px-2 py-2'>
                             <p className='font-bold'>{items.name}</p>

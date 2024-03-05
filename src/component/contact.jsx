@@ -15,7 +15,7 @@ const Contact = () => {
     return !name || !email || !message
   }
   return (
-      <div name='contact' className=' font-mono m-auto py-4 px-4 '>
+      <div name='contact' className=' font-mono m-auto py-4 px-4 bg-stone-900 '>
         <div className='flex justify-center p-2' >
               <h1 className='md:text-xl font-bold text-orange-500' >Get in Touch with us and give us your Feedback on our services:</h1>
         </div>
