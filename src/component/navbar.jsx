@@ -24,7 +24,7 @@ const Navbar = () => {
                     <h1>Cart</h1>
                   </button>
         </div>
-          <div className={nav ? 'bg-transparent bg-opacity-60 backdrop-blur-lg backdrop-filter:blur(8px) bg-clip-padding fixed top-0 left-0 w-[250px] h-screen z-10 duration-300' : 'bg-white fixed top-0 left-[-100%] w-[250px] h-screen z-10 duration-300'}>
+          <div className={nav ? 'bg-transparent bg-opacity-60 backdrop-blur-2xl backdrop-filter:blur(8px) bg-clip-padding fixed top-0 left-0 w-[350px] h-screen z-50 duration-300' : 'bg-white fixed top-0 left-[-100%] w-[250px] h-screen z-10 duration-300'}>
               <AiOutlineClose
                   onClick={handleClose}
                   className='absolute text-orange-500 right-4 top-4 cursor-pointer' size={30} />
