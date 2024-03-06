@@ -25,11 +25,11 @@ console.error('Error fetching data', error)
     fetchData();
   },[]);
   return (
-    <div name='drinks' className='font-mono p-2 border bg-orange-600/30'>
+    <div name='drinks' className='font-mono p-2 bg-orange-600/30'>
           <h1 className='text-2xl lg:text-3xl font-bold text-orange-500 flex justify-center'>Quench Your Thirst : </h1>
           <div className='grid md:grid-cols-2 gap-4 text-md pt-4 w-full mb-3' >
         {drinks.map((drink) => (
-          <div key={drink.idDrink} className='grid grid-cols-2 gap-2 md:gap-4 border bg-white/60 rounded-lg'>
+          <div key={drink.idDrink} className='grid grid-cols-2 gap-2 md:gap-4 border border-white/30 bg-white/60 rounded-lg'>
             <div className='rounded-l-lg'>
               <img className='object-cover w-full h-full rounded-l-lg' src={drink.strDrinkThumb} alt={drink.strDrink} />
             </div>
