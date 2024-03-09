@@ -54,6 +54,9 @@ const Menu = () => {
                             <p>
                                 <span className='font-bold text-green-500'>{items.price}</span>
                             </p>
+                            <div className='text-right'>
+                                <button className='text-right text-green-500 border border-white'>add +</button>
+                            </div>
                         </div>
                     </div>
                 ))}
