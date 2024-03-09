@@ -43,9 +43,9 @@ const Drinks = () => {
              </div>
              {selectedDrinkId === drink.idDrink &&(
           <div>
-<div className='flex flex-col justify-center items-center top-0 right-0 fixed gap-2 w-full h-full z-50 bg-stone-950 bg-opacity-20 backdrop-blur-lg backdrop-filter:blur(8px) bg-clip-padding text-white font-bold'>
-  <p className='text-center text-2xl md:text-3xl font-dancing'>{drink.strInstructions}</p>
-<button onClick={handleClose} className='border-none text-orange-500 text-2xl font-semibold'>close</button>
+<div className='flex flex-col justify-center items-center top-0 right-0 fixed gap-2 w-full h-full z-50 bg-stone-950 bg-opacity-60 backdrop-blur-md backdrop-filter:blur(8px) bg-clip-padding text-white font-bold'>
+  <p className='text-center text-yellow-300 text-3xl md:text-3xl font-dancing font-extrabold'>{drink.strInstructions}</p>
+<button onClick={handleClose} className='border-none text-2xl font-semibold'>close</button>
 </div>
           </div>
         )}
