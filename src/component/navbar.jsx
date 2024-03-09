@@ -7,6 +7,13 @@ const Navbar = () => {
     const handleClose=()=>{
       setNav(false)
     }
+    const [cart, setCart]=useState(false)
+    const cartOpen=()=>{
+      setCart(true)
+    }
+    const cartClose=()=>{
+      setCart(false)
+    }
   return (
     <div className='font-mono  flex items-center justify-center mx-auto p-6 '>
         <div className='flex items-center gap-3 p-2'>
@@ -19,11 +26,19 @@ const Navbar = () => {
                     <AiOutlineSearch className='mr-2 bg-transparent ' size={25}/>
                     <input className='bg-transparent  focus:outline-none w-full p-2 lg:text-xl' type='text' placeholder='Enter Your Food'/>
                   </div>
-                  <button className='flex items-center p-2 border-orange-600 text-orange-500 rounded-full lg:ml-10 cursor-pointer hover:bg-orange-500 hover:text-white'>
+                  <button onClick={cartOpen}
+                   className='flex items-center p-2 border-orange-600 text-orange-500 rounded-full lg:ml-10 cursor-pointer hover:bg-orange-500 hover:text-white'>
                   <BsFillCartFill className='mr-2' size={25}/>
                     <h1>Cart</h1>
                   </button>
         </div>
+        {/**cart section */}
+        {cart && (
+          <div className='bg-white h-screen w-full md:w-[900px] fixed right-0 top-0 z-50'>
+            <AiOutlineClose onClick={cartClose} className='cursor-pointer'/>
+            <h1>carts page</h1>
+          </div>
+        )}
           <div className={nav ? 'bg-transparent bg-opacity-60 backdrop-blur-2xl backdrop-filter:blur(8px) bg-clip-padding fixed top-0 left-0 w-[350px] h-screen z-50 duration-300' : 'bg-white fixed top-0 left-[-100%] w-[250px] h-screen z-10 duration-300'}>
               <AiOutlineClose
                   onClick={handleClose}
