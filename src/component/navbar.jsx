@@ -34,9 +34,15 @@ const Navbar = () => {
         </div>
         {/**cart section */}
         {cart && (
-          <div className='bg-white h-screen w-full md:w-[900px] fixed right-0 top-0 z-50'>
-            <AiOutlineClose onClick={cartClose} className='cursor-pointer'/>
-            <h1>carts page</h1>
+          <div className='bg-stone-950 text-white p-2 h-screen w-full md:w-[900px] fixed right-0 top-0 z-50 flex flex-col'>
+            <div className='border-b p-2'>
+              <AiOutlineClose onClick={cartClose} className='cursor-pointer'/>
+            <h1 className='text-center'>You have amazing taste buds!</h1>
+            <h1>Your plate</h1>
+            </div>
+            <div className='flex flex-col'>
+              <p>payment section</p>
+            </div>
           </div>
         )}
           <div className={nav ? 'bg-transparent bg-opacity-60 backdrop-blur-2xl backdrop-filter:blur(8px) bg-clip-padding fixed top-0 left-0 w-[350px] h-screen z-50 duration-300' : 'bg-white fixed top-0 left-[-100%] w-[250px] h-screen z-10 duration-300'}>
