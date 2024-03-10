@@ -10,6 +10,7 @@ module.exports = {
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
         roboto: ['Roboto', 'sans-serif'],
       arial: ['Arial', 'sans-serif'],
+      dancing:['Dancing Script', 'cursive'],
       },
     },
   },

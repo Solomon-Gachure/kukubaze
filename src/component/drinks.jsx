@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { LiaCocktailSolid } from "react-icons/lia";
 import axios from 'axios';
+import { drinks } from '../data/drinks';
 const Drinks = () => {
   const [selectedDrinkId, setSelectedDrinkId] = useState(null);
-  const [drink, setDrink] = useState([]);
+  const [drink, setDrink] = useState(drinks);
 
   const handleOpen = (idDrink) => {
     setSelectedDrinkId(idDrink);
@@ -11,19 +12,7 @@ const Drinks = () => {
   const handleClose=()=>{
     setSelectedDrinkId(false)
   }
-  const[drinks, setDrinks]=useState([]);
-  useEffect(()=>{
-    const fetchData =async()=>{
-      try{
-        const response=await axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a');
-        setDrinks(response.data.drinks);
-      }
-      catch (error){
-console.error('Error fetching data', error)
-      }
-    }
-    fetchData();
-  },[]);
+  
   return (
     <div name='drinks' className='font-mono p-2 bg-orange-600/30'>
           <h1 className='text-2xl lg:text-3xl font-bold text-orange-500 flex justify-center'>Quench Your Thirst : </h1>
@@ -37,6 +26,7 @@ console.error('Error fetching data', error)
               <div className='gap-1 flex flex-col pt-4'>
                 <div><h2 className='font-bold text-xl italic text-orange-500'>{drink.strDrink}</h2></div>
             <div><p>{drink.strCategory}</p></div>
+            <div><p className='text-green-500 font-semibold text-xl'>{drink.strPrice}</p></div>
             <div>
               <p>Ingredients:</p>
             <ol className="ml-4">
@@ -52,10 +42,10 @@ console.error('Error fetching data', error)
               <button onClick={() => handleOpen(drink.idDrink)} className='p-1'><span className='flex flex-row lg:items-center lg:gap-1'>How we craft it<LiaCocktailSolid className='text-orange-500' size={20} /></span></button>
              </div>
              {selectedDrinkId === drink.idDrink &&(
-          <div className='top-0 right-0 inset-0 w-full h-full'>
-<div className='flex flex-col justify-center items-center top-0 gap-2 w-full h-full text-orange-500 font-bold'>
-  <p>{drink.strInstructions}</p>
-<button onClick={handleClose} className='border-none'>close</button>
+          <div>
+<div className='flex flex-col justify-center items-center top-0 right-0 fixed gap-2 w-full h-full z-50 bg-stone-950 bg-opacity-60 backdrop-blur-md backdrop-filter:blur(8px) bg-clip-padding text-white font-bold'>
+  <p className='text-center text-yellow-300 text-3xl md:text-3xl font-dancing font-extrabold'>{drink.strInstructions}</p>
+<button onClick={handleClose} className='border-none text-2xl font-semibold'>close</button>
 </div>
           </div>
         )}
