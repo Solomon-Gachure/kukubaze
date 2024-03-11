@@ -9,7 +9,7 @@ const Cart = () => {
         <div className='flex justify-between'>
             {/**product section i.e img, name & price */}
             <div className='flex flex-col w-full gap-2'>
-                <div className='border-b'><h1 className='md:text-xl'>Meal</h1></div>
+                <div><h1 className='md:text-xl'>Meal</h1></div>
                 <div className='flex gap-24 md:gap-40'>
                     {/**product image */}
                     <div>img</div>
@@ -23,9 +23,9 @@ const Cart = () => {
             <div className='flex gap-4 md:gap-20'>
                 {/**quantity of the products */}
             <div className='flex flex-col gap-2 md:w-[150px]'>
-                <div className='border-b'><h1 className='md:text-xl'>Quantity</h1></div>
+                <div><h1 className='md:text-xl'>Quantity</h1></div>
                 <div className='flex items-center gap-2'>
-                    <div className='border w-[120px] flex items-center gap-2 md:justify-evenly p-2'>
+                    <div className='border md:w-[120px] flex items-center gap-2 md:justify-evenly p-2'>
                     <FaMinus className='cursor-pointer' />
                     <h1>2</h1>
                     <FaPlus className='cursor-pointer' />
@@ -35,8 +35,8 @@ const Cart = () => {
             </div>
             {/**amount  */}
             <div className='flex flex-col gap-2'>
-                <div className='border-b'><h1 className='md:text-xl'>Amount</h1></div>
-                <div>p</div>
+                <div><h1 className='md:text-xl'>Amount</h1></div>
+                <p className='text-center'>ksh200</p>
             </div>
             </div>
         </div>
