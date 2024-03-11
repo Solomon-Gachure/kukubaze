@@ -5,12 +5,12 @@ import Map from "./component/map";
 import Menu from "./component/menu";
 function App() {
   return (
-    <div >
-      <Hero/>
-      <Drinks/>
-      <Menu/>
-      <Map/>
-      <Contact/>
+    <div>
+      <Hero />
+      <Drinks />
+      <Menu />
+      <Map />
+      <Contact />
     </div>
   );
 }
