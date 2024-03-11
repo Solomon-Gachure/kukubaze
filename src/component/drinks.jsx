@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { LiaCocktailSolid } from "react-icons/lia";
-import axios from 'axios';
 import { drinks } from '../data/drinks';
 const Drinks = () => {
   const [selectedDrinkId, setSelectedDrinkId] = useState(null);

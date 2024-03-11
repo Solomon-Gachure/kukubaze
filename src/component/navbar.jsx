@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { AiOutlineMenu, AiOutlineSearch, AiOutlineClose } from "react-icons/ai"
 import { BsFillCartFill } from 'react-icons/bs'
 import { Link } from 'react-scroll';
+import Cart from './cart';
 const Navbar = () => {
     const [nav,setNav]=useState(false)
     const handleClose=()=>{
@@ -39,6 +40,9 @@ const Navbar = () => {
               <AiOutlineClose onClick={cartClose} className='cursor-pointer'/>
             <h1 className='text-center'>You have amazing taste buds!</h1>
             <h1>Your plate</h1>
+            <div>
+              <Cart/>
+            </div>
             </div>
             <div className='flex flex-col'>
               <p>payment section</p>
