@@ -35,7 +35,7 @@ const Navbar = () => {
         </div>
         {/**cart section */}
         {cart && (
-          <div className='bg-stone-950 text-white p-2 h-screen w-full md:w-[900px] fixed right-0 top-0 z-50 gap-4 flex flex-col'>
+          <div className='bg-stone-950 text-white p-2 md:p-4 h-screen w-full md:w-[900px] fixed right-0 top-0 z-50 gap-4 flex flex-col'>
             <div className='border-b p-2 md:p-4'>
                 <AiOutlineClose onClick={cartClose} className='cursor-pointer left-0'/>
             <h1 className='text-center text-lg md:text-xl'>You have amazing taste buds!</h1>

@@ -6,7 +6,9 @@ import { IoTrashOutline } from "react-icons/io5";
 const Cart = () => {
   return (
     <div>
-        <div className='flex justify-between'>
+        <div className='flex flex-col gap-10'>
+            {/**cart details */}
+            <div className='flex justify-between'>
             {/**product section i.e img, name & price */}
             <div className='flex flex-col w-full gap-2'>
                 <div><h1 className='md:text-xl'>Meal</h1></div>
@@ -39,6 +41,11 @@ const Cart = () => {
                 <p className='text-center'>ksh200</p>
             </div>
             </div>
+        </div>
+        {/**estimated amount section */}
+        <div className='flex justify-end'>
+            <p className='text-center'>Total amount <span>ksh 400</span></p>
+        </div>
         </div>
         
         </div>
