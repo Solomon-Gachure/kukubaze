@@ -44,7 +44,7 @@ const Navbar = () => {
       {/**cart section */}
       {cart && (
         <div className="bg-stone-950 text-white p-2 md:p-4 h-screen w-full md:w-[900px] fixed right-0 top-0 z-50 gap-4 flex flex-col">
-          <div className="border-b p-2 md:p-4">
+          <div className=" p-2 md:p-4">
             <AiOutlineClose
               onClick={cartClose}
               className="cursor-pointer left-0"
@@ -57,30 +57,7 @@ const Navbar = () => {
               <Cart />
             </div>
           </div>
-          <div className="flex flex-col md:flex-row p-2 gap-4">
-            <div className="flex flex-col gap-2">
-              <p>Additional Information</p>
-              <textarea
-                name=""
-                id=""
-                cols="40"
-                rows="5"
-                className="bg-transparent border outline-none p-2"
-              ></textarea>
-            </div>
-            <div className="flex flex-col justify-center">
-              <p>
-                Tax & Shipping fee inclusive in the total amount.
-                <br />
-                Proceed to checkout.
-              </p>
-              <div className="py-2">
-                <button className="border w-full rounded-none bg-orange-500 text-xl font-bold p-2">
-                  Check Out
-                </button>
-              </div>
-            </div>
-          </div>
+          
         </div>
       )}
       <div
