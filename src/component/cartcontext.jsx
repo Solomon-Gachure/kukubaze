@@ -3,7 +3,7 @@ import React from 'react'
 const Cartcontext = () => {
   return (
     <div>
-      <p>cartcontext</p>
+      <p className="p-2">cartcontext</p>
       </div>
   )
 }
