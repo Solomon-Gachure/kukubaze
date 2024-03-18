@@ -1,12 +1,11 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const cartContext= createContext(null)
-const Cartcontext = () => {
+const Cartcontext = (props) => {
+  const [cartItems, setCartItems] = useState()
   return (
     <cartContext.Provider>
-      <div>
-        <p className="p-2 font-bold">cartcontext</p>
-      </div>
+      {props.children}
     </cartContext.Provider>
   );
 }

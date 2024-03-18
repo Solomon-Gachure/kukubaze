@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { LiaCocktailSolid } from "react-icons/lia";
-import { drinks } from "../data/drinks";
+import { drinks } from "../data/products";
 const Drinks = () => {
   const [selectedDrinkId, setSelectedDrinkId] = useState(null);
-  const [drink, setDrink] = useState(drinks);
+
 
   const handleOpen = (idDrink) => {
     setSelectedDrinkId(idDrink);

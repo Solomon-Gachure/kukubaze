@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { data } from "../data/data.js";
+import { data } from "../data/products.js";
 const Menu = () => {
   const [foods, setFoods] = useState(data);
   const filterType = (category) => {
