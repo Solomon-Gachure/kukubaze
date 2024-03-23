@@ -21,7 +21,7 @@ const Menu = () => {
       name="menu"
       className=" font-mono m-auto bg-stone-900 text-white py-2 px-4"
     >
-      <h1 className="text-2xl md:text-4xl text-orange-500 font-bold flex justify-center">
+      <h1 className="text-2xl md:text-4xl text-orange-500 font-semibold flex justify-center">
         Our Top Rated Menu
       </h1>
       <div className="flex flex-col lg:flex-row justify-between">
