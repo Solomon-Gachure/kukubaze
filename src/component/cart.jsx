@@ -1,8 +1,18 @@
-import React from "react";
-import { products } from "../data/products.js";
+import React, {useContext} from "react";
+import { CartContext } from "./cartcontext.jsx";
+import { PRODUCTS } from "../data/products";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { IoTrashOutline } from "react-icons/io5";
 const Cart = () => {
+  const { cartItems } = useContext(CartContext);
+  const totalAmount = Object.entries(cartItems).reduce(
+    (total, [itemId, quantity]) => {
+      // Assuming PRODUCTS is imported from "../data/products.js"
+      const item = PRODUCTS.find((product) => product.id === itemId);
+      return total + item.price * quantity;
+    },
+    0
+  );
   return (
     <div>
       <div className="flex flex-col gap-10">

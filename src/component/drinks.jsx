@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { LiaCocktailSolid } from "react-icons/lia";
+import React, { useState, useContext } from "react";
+import { CartContext } from "./cartcontext.jsx";
 import { drinks } from "../data/products";
+import { LiaCocktailSolid } from "react-icons/lia";
 const Drinks = () => {
+   const { addToCart } = useContext(CartContext);
   const [selectedDrinkId, setSelectedDrinkId] = useState(null);
-
-
   const handleOpen = (idDrink) => {
     setSelectedDrinkId(idDrink);
   };
@@ -85,7 +85,10 @@ const Drinks = () => {
               </div>
 
               <div className="text-right m-2">
-                <button className="border-none bg-orange-500/60 text-white font-bold italic">
+                <button
+                  onClick={() => addToCart(drink.idDrink)}
+                  className="border-none bg-orange-500/60 text-white font-bold italic"
+                >
                   add drink
                 </button>
               </div>

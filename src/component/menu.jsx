@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { data } from "../data/products.js";
-const Menu = () => {
+import { CartContext } from "./cartcontext.jsx";
+const Menu = (props) => {
+  const {addToCart} = useContext(CartContext);
   const [foods, setFoods] = useState(data);
   const filterType = (category) => {
     setFoods(
@@ -109,7 +111,10 @@ const Menu = () => {
                 <span className="font-bold text-green-500">{items.price}</span>
               </p>
               <div className="text-right">
-                <button className="text-right text-green-500 border border-white">
+                <button
+                  className="text-right text-green-500 border border-white"
+                  onClick={() => addToCart(items.id)}
+                >
                   add +
                 </button>
               </div>

@@ -411,3 +411,5 @@ export const drinks = [
     strIngredient15: null,
   },
 ];
+
+export const PRODUCTS = [...data, ...drinks];
