@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
-import { BsFillCartFill } from "react-icons/bs";
+import { LuShoppingBag } from "react-icons/lu";
 import { Link } from "react-scroll";
 import Cart from "./cart";
 const Navbar = () => {
@@ -37,7 +37,7 @@ const Navbar = () => {
           onClick={cartOpen}
           className="flex items-center p-2 border-orange-600 text-orange-500 rounded-full lg:ml-10 cursor-pointer hover:bg-orange-500 hover:text-white"
         >
-          <BsFillCartFill className="mr-2" size={25} />
+          <LuShoppingBag className="mr-2" size={25} />
           <h1>Cart</h1>
         </button>
       </div>
