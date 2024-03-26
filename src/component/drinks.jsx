@@ -34,7 +34,7 @@ const Drinks = () => {
               <div className="gap-1 flex flex-col pt-4">
                 <div>
                   <h2 className="font-bold text-xl italic text-orange-500">
-                    {drink.strDrink}
+                    {drink.name}
                   </h2>
                 </div>
                 <div>
@@ -42,7 +42,7 @@ const Drinks = () => {
                 </div>
                 <div>
                   <p className="text-green-500 font-semibold text-xl">
-                    {drink.strPrice}
+                    {drink.Price}
                   </p>
                 </div>
                 <div>

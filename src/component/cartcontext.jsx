@@ -3,7 +3,7 @@ import { PRODUCTS } from "../data/products";
 export const CartContext = createContext(null);
 const getDefaultCart = () => {
   let cart = {};
-  for (let i = 0; i < PRODUCTS.length + 1; i++) {
+  for (let i = 1; i < PRODUCTS.length + 1; i++) {
     cart[[i].id] = 0;
   }
   return cart;
