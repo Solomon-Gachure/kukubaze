@@ -49,7 +49,7 @@ const Navbar = () => {
               onClick={cartClose}
               className="cursor-pointer left-0"
             />
-            <h1 className="text-center text-lg md:text-xl">
+            <h1 className="text-center font-bold text-lg md:text-xl">
               You have amazing taste buds!
             </h1>
             <h1 className="py-2 text-lg md:text-xl">Your plate</h1>
