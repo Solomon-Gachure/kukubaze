@@ -5,14 +5,20 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 import { IoTrashOutline } from "react-icons/io5";
 const Cart = () => {
   const { cartItems,removeFromCart } = useContext(CartContext);
-  const totalAmount = Object.entries(cartItems).reduce(
-    (total, [itemId, quantity]) => {
-      // Assuming PRODUCTS is imported from "../data/products.js"
-      const cartItems = PRODUCTS.find((product) => product.id === itemId);
-      return total + cartItems.price * quantity;
-    },
-    0
-  );
+  const cartItemsArray = Object.entries(cartItems).map(([itemId, quantity]) => {
+    const product = PRODUCTS.find((product) => product.id === Number(itemId));
+    return {
+      ...product,
+      quantity,
+    };
+  });
+  const totalAmount = cartItemsArray.reduce((total, cartItem) => {
+    // Convert price string to number by removing 'Ksh.' and parsing it as a float
+    const price = cartItem.price ? parseFloat(cartItem.price.replace("Ksh.", "")) : 0;
+    return total + price * cartItem.quantity;
+  }, 0);
+
+
   return (
     <div>
       {cartItems.length === 0 ? (
@@ -20,7 +26,7 @@ const Cart = () => {
       ) : (
         <div key={cartItems.id} className="flex flex-col gap-10">
           {/**cart details */}
-          {cartItems.map((cartItem) => (
+          {cartItemsArray.map((cartItem) => (
             <div key={cartItem.id} className="flex justify-between">
               {/**product section i.e img, name & price */}
               <div className="flex flex-col w-full gap-2">
@@ -63,7 +69,7 @@ const Cart = () => {
                   <div>
                     <h1 className="md:text-xl">Amount</h1>
                   </div>
-                  <p className="text-center">ksh200</p>
+                  <p className="text-center">{cartItem.price}</p>
                 </div>
               </div>
             </div>
@@ -72,7 +78,7 @@ const Cart = () => {
           {/**estimated amount section */}
           <div className="flex justify-end">
             <p className="text-center">
-              Total amount <span>ksh 400</span>
+              Total amount <span>{totalAmount}</span>
             </p>
           </div>
         </div>
