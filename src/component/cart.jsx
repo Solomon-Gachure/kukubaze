@@ -29,61 +29,67 @@ const Cart = () => {
           {cartItemsArray.map((cartItem) => (
             <div key={cartItem.id}>
               {/**product section i.e img, name & price */}
-              <table className="border w-full">
-                <thead className="flex justify-between">
-                  <tbody>
-                    <th>Meal</th>
-                    <tr>
-                      {/**image section */}
-                      <td>
-                        <div className="w-[200px]">
-                          <img src={cartItem.image} alt={cartItem.name} />
-                        </div>
-                      </td>
-                      {/**details section; type of meal + price */}
-                      <td>
-                        <div>
-                          <h1>{cartItem.name}</h1>
-                          <h1>{cartItem.price && <p>{cartItem.price}</p>}</h1>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <th>Quantity</th>
-                    <tr>
-                      {/**quantity section */}
-                      <td>
-                        <div className="flex gap-4 md:gap-20">
-                          {/**quantity of the products */}
-                          <div className="flex flex-col gap-2 md:w-[150px]">
-                            <div className="flex items-center gap-2">
-                              <div className="border md:w-[120px] flex items-center gap-2 md:justify-evenly p-2">
-                                <FaMinus className="cursor-pointer" />
-                                <h1>2</h1>
-                                <FaPlus className="cursor-pointer" />
+              <table className="w-full gap-2">
+                <thead>
+                  <tbody className="flex justify-between gap-2">
+                    <tbody>
+                      <th>Meal</th>
+                      <tr>
+                        {/**image section */}
+                        <td>
+                          <div className="w-[60px] h-[70px] md:w-[200px] md:h-[150px]">
+                            <img
+                              src={cartItem.image}
+                              alt={cartItem.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </td>
+                        {/**details section; type of meal + price */}
+                        <td>
+                          <div className="ml-4">
+                            <h1>{cartItem.name}</h1>
+                            <h1>{cartItem.price && <p>{cartItem.price}</p>}</h1>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <th>Quantity</th>
+                      <tr>
+                        {/**quantity section */}
+                        <td>
+                          <div className="flex gap-4 md:gap-20">
+                            {/**quantity of the products */}
+                            <div className="flex flex-col gap-2 md:w-[150px]">
+                              <div className="flex items-center gap-2">
+                                <div className="border md:w-[120px] flex items-center gap-2 md:justify-evenly p-2">
+                                  <FaMinus className="cursor-pointer" />
+                                  <h1>2</h1>
+                                  <FaPlus className="cursor-pointer" />
+                                </div>
+                                <IoTrashOutline
+                                  onClick={removeFromCart}
+                                  size={20}
+                                  className="cursor-pointer"
+                                />
                               </div>
-                              <IoTrashOutline
-                                onClick={removeFromCart}
-                                size={20}
-                                className="cursor-pointer"
-                              />
                             </div>
                           </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <th>Amount</th>
-                    <tr>
-                      {/**total amount section */}
-                      <td>
-                        <div className="flex flex-col gap-2">
-                          <p className="text-center">{cartItem.price}</p>
-                        </div>
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <th>Amount</th>
+                      <tr>
+                        {/**total amount section */}
+                        <td>
+                          <div className="flex flex-col gap-2">
+                            <p className="text-center">{cartItem.price}</p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
                   </tbody>
                 </thead>
               </table>
