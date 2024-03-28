@@ -27,51 +27,66 @@ const Cart = () => {
         <div key={cartItems.id} className="flex flex-col gap-10">
           {/**cart details */}
           {cartItemsArray.map((cartItem) => (
-            <div key={cartItem.id} className="flex justify-between">
+            <div key={cartItem.id}>
               {/**product section i.e img, name & price */}
-              <div className="flex flex-col w-full gap-2">
-                <div>
-                  <h1 className="md:text-xl">Meal</h1>
-                </div>
-                <div className="flex gap-24 md:gap-20">
-                  {/**product image */}
-                  <div>
-                    <img src={cartItem.image} alt={cartItem.name} />
-                  </div>
-                  {/**name & price */}
-                  <div>
-                    <h1>{cartItem.name}</h1>
-                    <h1>{cartItem.price && <p>{cartItem.price}</p>}</h1>
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-4 md:gap-20">
-                {/**quantity of the products */}
-                <div className="flex flex-col gap-2 md:w-[150px]">
-                  <div>
-                    <h1 className="md:text-xl">Quantity</h1>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="border md:w-[120px] flex items-center gap-2 md:justify-evenly p-2">
-                      <FaMinus className="cursor-pointer" />
-                      <h1>2</h1>
-                      <FaPlus className="cursor-pointer" />
-                    </div>
-                    <IoTrashOutline
-                      onClick={removeFromCart}
-                      size={20}
-                      className="cursor-pointer"
-                    />
-                  </div>
-                </div>
-                {/**amount  */}
-                <div className="flex flex-col gap-2">
-                  <div>
-                    <h1 className="md:text-xl">Amount</h1>
-                  </div>
-                  <p className="text-center">{cartItem.price}</p>
-                </div>
-              </div>
+              <table className="border w-full">
+                <thead className="flex justify-between">
+                  <tbody>
+                    <th>Meal</th>
+                    <tr>
+                      {/**image section */}
+                      <td>
+                        <div className="w-[200px]">
+                          <img src={cartItem.image} alt={cartItem.name} />
+                        </div>
+                      </td>
+                      {/**details section; type of meal + price */}
+                      <td>
+                        <div>
+                          <h1>{cartItem.name}</h1>
+                          <h1>{cartItem.price && <p>{cartItem.price}</p>}</h1>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <th>Quantity</th>
+                    <tr>
+                      {/**quantity section */}
+                      <td>
+                        <div className="flex gap-4 md:gap-20">
+                          {/**quantity of the products */}
+                          <div className="flex flex-col gap-2 md:w-[150px]">
+                            <div className="flex items-center gap-2">
+                              <div className="border md:w-[120px] flex items-center gap-2 md:justify-evenly p-2">
+                                <FaMinus className="cursor-pointer" />
+                                <h1>2</h1>
+                                <FaPlus className="cursor-pointer" />
+                              </div>
+                              <IoTrashOutline
+                                onClick={removeFromCart}
+                                size={20}
+                                className="cursor-pointer"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <th>Amount</th>
+                    <tr>
+                      {/**total amount section */}
+                      <td>
+                        <div className="flex flex-col gap-2">
+                          <p className="text-center">{cartItem.price}</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </thead>
+              </table>
             </div>
           ))}
 
